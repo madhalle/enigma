@@ -1,3 +1,16 @@
+require 'test_helper.rb'
+require 'date'
+require './lib/enigma'
+
+class EnigmaTest < Minitest::Test
+  def setup
+    @enigma = Enigma.new
+  end
+
+  def test_it_exists
+    assert_instance_of Enigma, @enigma 
+  end
+end
 # Enigma#encrypt(message, key, date)
 # The encrypt method takes a message String as an argument.
 # It can optionally take a Key and Date as arguments to use for
@@ -26,7 +39,7 @@
 #
 # pry(main)> require './lib/enigma'
 # #=> true
-# 
+#
 # pry(main)> enigma = Enigma.new
 # #=> #<Enigma:0x00007ff90f24cb78...>
 #
