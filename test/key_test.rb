@@ -19,11 +19,22 @@ class KeyTest < Minitest::Test
     assert_nil @key.d_key
 
     @key.stubs(:rand).returns("5188")
-    # @key.generate
     assert_equal "05188", @key.generate
     assert_nil @key.a_key
     assert_nil @key.b_key
     assert_nil @key.c_key
     assert_nil @key.d_key
   end
+
+  def test_split_method
+    @key.stubs(:rand).returns("5188")
+    assert_equal "05188", @key.generate
+    @key.split
+    assert_equal "05", @key.a_key
+    assert_equal "51", @key.b_key
+    assert_equal "18", @key.c_key
+    assert_equal "88", @key.d_key
+  end
+
+  
 end

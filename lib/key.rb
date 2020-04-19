@@ -11,6 +11,7 @@ class Key
   def generate
     @key = '0' + rand(9999).to_s
   end
+
 end
 # The Keys
 # The keys are created by generating a random
