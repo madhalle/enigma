@@ -1,3 +1,12 @@
+class Enigma
+  # def initialize(argument)
+  #   @argument = argument
+  # end
+
+  def encrypt(message, key, date)
+    require "pry"; binding.pry
+  end
+end
 # Enigma#encrypt(message, key, date)
 # The encrypt method takes a message String as an argument.
 # It can optionally take a Key and Date as arguments to use for
