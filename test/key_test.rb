@@ -12,16 +12,18 @@ class KeyTest < Minitest::Test
   end
 
   def test_it_has_keys
-    assert_equal nil,@key.a_key
-    assert_equal nil,@key.b_key
-    assert_equal nil,@key.c_key
-    assert_equal nil,@key.d_key
+    assert_nil @key.key
+    assert_nil @key.a_key
+    assert_nil @key.b_key
+    assert_nil @key.c_key
+    assert_nil @key.d_key
 
-    @key.generate
-
-    assert_equal nil,@key.a_key
-    assert_equal nil,@key.b_key
-    assert_equal nil,@key.c_key
-    assert_equal nil,@key.d_key
+    @key.stubs(:rand).returns("5188")
+    # @key.generate
+    assert_equal "05188", @key.generate
+    assert_nil @key.a_key
+    assert_nil @key.b_key
+    assert_nil @key.c_key
+    assert_nil @key.d_key
   end
 end

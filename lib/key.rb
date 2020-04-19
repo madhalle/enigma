@@ -1,15 +1,20 @@
 class Key
-  attr_reader :a_key, :b_key, :c_key, :d_key
+  attr_reader :key, :a_key, :b_key, :c_key, :d_key
   def initialize
+    @key = key
     @a_key = a_key
     @b_key = b_key
     @c_key = c_key
     @d_key = d_key
   end
+
+  def generate
+    @key = '0' + rand(9999).to_s
+  end
 end
 # The Keys
-# key = '0' + rand.to_s[2..5]
 # The keys are created by generating a random
+
 # five digit number, like 02715, and splitting it up like so:
 #
 # A key: first two digits (02)
